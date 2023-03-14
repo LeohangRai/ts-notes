@@ -1,10 +1,18 @@
 class AutoMobile {
     public drive(): void {
+        this.start();
         console.log("Driving...");
     }
 
     public honk(): void {
         console.log("Beep Beep");
+    }
+    
+    // private method
+    // only accessible withing the same class
+    // callable by other methods within the same class
+    private start(): void {
+        console.log("Starting...");
     }
 }
 
