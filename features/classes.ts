@@ -9,10 +9,17 @@ class AutoMobile {
     }
     
     // private method
-    // only accessible withing the same class
+    // only accessible within the same class
     // callable by other methods within the same class
     private start(): void {
         console.log("Starting...");
+    }
+
+    // protected method
+    // only accessible within the same class an child classes
+    // callable by other methods within the same class or its child classes
+    protected drift(): void {
+        console.log("Tokyo Drift...");
     }
 }
 
@@ -27,6 +34,11 @@ class Car extends AutoMobile {
     // overriding the drive method
     public drive(): void {
         console.log('Vroom Vroom');
+    }
+
+    public stunt(): void {
+        // calling the protected method drift()
+        this.drift();
     }
 }
 
