@@ -23,5 +23,9 @@ export class CustomMap {
             lng: mappable.location.lng
         })
         marker.addTo(this.map);
+        const popup = new L.Popup({
+            content: mappable.getMarkerContent()
+        })
+        marker.bindPopup(popup);
     }
 }
