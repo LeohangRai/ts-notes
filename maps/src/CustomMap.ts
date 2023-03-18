@@ -1,4 +1,6 @@
 import L from "leaflet";
+import { User } from "./User";
+import { Company } from "./Company";
 
 export class CustomMap {
     private map: L.Map;
@@ -14,5 +16,13 @@ export class CustomMap {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19
         }).addTo(this.map);
+    }
+
+    addMarker(mappable: User | Company): void {
+        const marker = new L.Marker({
+            lat: mappable.location.lat,
+            lng: mappable.location.lng
+        })
+        marker.addTo(this.map);
     }
 }
