@@ -9,7 +9,9 @@ export class CharactersCollection {
     /* 
       using toLowerCase() because in JS, strings are compared on the basis of their UTF-16 codes (charCodeAt()) and Upper Case Letters have lower UTF-16 value than Lower Case Letters 
     */
-    return this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase();
+    return (
+      this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase()
+    );
   }
 
   swap(leftIndex: number, rightIndex: number): void {
