@@ -10,7 +10,7 @@ export class LinkedList {
     if (!this.head) {
       return 0;
     }
-    let counter = 0;
+    let counter = 1;
     let pointer = this.head;
     while (pointer.next) {
       counter++;
